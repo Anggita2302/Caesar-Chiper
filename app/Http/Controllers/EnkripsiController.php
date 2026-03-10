@@ -11,6 +11,20 @@ class EnkripsiController extends Controller
     {
         return view('enkripsi');
     }
+    public function landing()
+    {
+        return view('landing');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 
     public function hasil(Request $request)
     {

@@ -17,19 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/landing', function () {
-    return view('landing');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
 use App\Http\Controllers\EnkripsiController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
+Route::get('/', [LandingController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/', [EnkripsiController::class, 'index']);
 Route::post('/hasil', [EnkripsiController::class, 'hasil'])->name('hasil');
