@@ -22,7 +22,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/', [LandingController::class, 'index']);
+Route::get('/landing', [LandingController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/', [EnkripsiController::class, 'index']);
