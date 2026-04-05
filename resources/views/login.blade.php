@@ -8,7 +8,7 @@
 
     <style>
         body{
-            background: #6aa5ff;
+            background: linear-gradient(to bottom, #92acff, #6aa5ff); 
             height:100vh;
             display:flex;
             justify-content:center;
@@ -41,25 +41,21 @@
 
     <h3 class="login-title">Login</h3>
 
-    <form>
+    <form method="POST" action="/login">
+         @csrf
+
         <div class="mb-3">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="Masukkan email">
+            <input type="email" name="email" class="form-control" placeholder="Masukkan email">
         </div>
 
         <div class="mb-3">
             <label>Password</label>
-            <input type="password" class="form-control" placeholder="Masukkan password">
+            <input type="password" name="password" class="form-control" placeholder="Masukkan password">
         </div>
 
         <button class="btn btn-primary btn-login">Login</button>
     </form>
-
-    <hr>
-
-    <div class="text-center">
-        <a href="/dashboard" class="btn btn-success">Masuk ke Dashboard</a>
-    </div>
 
 </div>
 
