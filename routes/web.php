@@ -19,13 +19,17 @@ Route::get('/', function () {
 
 use App\Http\Controllers\EnkripsiController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardController;
 
 Route::get('/landing', [AuthController::class, 'landing']);
+
+// halaman login
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'loginProses']);
+
+// halaman dashboard
 Route::get('/dashboard', [AuthController::class, 'dashboard']);
+
+// halaman logout
 Route::get('/logout', [AuthController::class, 'logout']);
 
 

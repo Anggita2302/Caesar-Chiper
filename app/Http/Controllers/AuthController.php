@@ -28,12 +28,19 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        // cek apakah sudah login
+    if (!session('login')) {
+        return redirect('/login');
+    }
+
+    return view('dashboard');
     }
 
     public function logout()
     {
-        return view('login');
+        session()->flush(); // hapus semua session
+        return redirect('/login');
+    
     }
     
 }
