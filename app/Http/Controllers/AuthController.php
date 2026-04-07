@@ -26,14 +26,24 @@ class AuthController extends Controller
     return back()->with('error', 'Email atau password salah');
 }
 
-    public function dashboard()
+    // public function dashboard()
+    // {
+    //     // cek apakah sudah login
+    // if (!session('login')) {
+    //     return redirect('/login');
+    // }
+
+    // return view('dashboard');
+    // }
+
+    public function daftar_pengguna()
     {
         // cek apakah sudah login
     if (!session('login')) {
         return redirect('/login');
     }
 
-    return view('dashboard');
+    return view('daftar_pengguna');
     }
 
     public function logout()
