@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,23 +22,12 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/landing', [LandingController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
-Route::post('/login', [LoginController::class, 'login']);
-Route::get('/dashboard', function () {
+Route::get('/landing', [AuthController::class, 'landing']);
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'loginProses']);
+Route::get('/dashboard', [AuthController::class, 'dashboard']);
+Route::get('/logout', [AuthController::class, 'logout']);
 
-    // cek apakah sudah login
-    if (!session('login')) {
-        return redirect('/login');
-    }
-
-    return view('dashboard');
-});
-
-Route::get('/logout', function () {
-    session()->forget('login');
-    return redirect('/login');
-});
 
 Route::get('/', [EnkripsiController::class, 'index']);
 Route::post('/hasil', [EnkripsiController::class, 'hasil'])->name('hasil');
