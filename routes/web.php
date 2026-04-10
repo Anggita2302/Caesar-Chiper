@@ -27,7 +27,7 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'loginProses']);
 
 // halaman dashboard
-Route::get('/dashboard', [AuthController::class, 'daftar_pengguna']);
+Route::get('/dashboard', [AuthController::class, 'dashboard']);
 
 // halaman daftar pengguna
 // Route::get('/daftar_pengguna', [AuthController::class, 'daftar_pengguna']);

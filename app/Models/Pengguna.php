@@ -14,4 +14,6 @@ class Pengguna extends Model
     protected $fillable = ['email', 'password'];
     //nama primarykey
     protected $primarykey = 'id_pengguna';
+
+    public $timestamps = true;
 }

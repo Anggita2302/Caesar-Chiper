@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengguna;
 
 class AuthController extends Controller
 {
@@ -26,24 +27,16 @@ class AuthController extends Controller
     return back()->with('error', 'Email atau password salah');
 }
 
-    // public function dashboard()
-    // {
-    //     // cek apakah sudah login
-    // if (!session('login')) {
-    //     return redirect('/login');
-    // }
-
-    // return view('dashboard');
-    // }
-
-    public function daftar_pengguna()
+    public function dashboard()
     {
         // cek apakah sudah login
     if (!session('login')) {
         return redirect('/login');
     }
 
-    return view('daftar_pengguna');
+    $data = Pengguna::all(); // ambil data pengguna
+
+    return view('daftar_pengguna', compact('data'));
     }
 
     public function logout()
