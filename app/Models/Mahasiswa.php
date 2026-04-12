@@ -4,8 +4,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    protected $table = 'mahasiswa';
+    protected $table = 'public.mahasiswa';
 
+    //menyaring kolom yang diisi manual
     protected $fillable = [
         'user_id',
         'nama',

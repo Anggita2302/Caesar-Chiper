@@ -2,39 +2,37 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\EnkripsiController;
-use App\Http\Controllers\LandingController;
-
+// halaman landing
 Route::get('/landing', [AuthController::class, 'landing']);
+
+// halaman cipher
+use App\Http\Controllers\EnkripsiController;
+Route::get('/', [EnkripsiController::class, 'index']);
+Route::post('/hasil', [EnkripsiController::class, 'hasil'])->name('hasil');
 
 // halaman login
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'loginProses']);
 
 // halaman dashboard
-Route::get('/dashboard', [AuthController::class, 'dashboard']);
+use App\Http\Controllers\DashboardController;
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // halaman daftar pengguna
-// Route::get('/daftar_pengguna', [AuthController::class, 'daftar_pengguna']);
+use App\Http\Controllers\PenggunaController;
+Route::get('/pengguna', [PenggunaController::class, 'index']);
+Route::get('/pengguna/create', [PenggunaController::class, 'create']);
+Route::post('/pengguna/store', [PenggunaController::class, 'store']);
+Route::get('/pengguna/edit/{id_pengguna}', [PenggunaController::class, 'edit']);
+Route::post('/pengguna/update/{id_pengguna}', [PenggunaController::class, 'update']);
+Route::get('/pengguna/delete/{id_pengguna}', [PenggunaController::class, 'destroy']);
 
 // halaman logout
 Route::get('/logout', [AuthController::class, 'logout']);
 
 
-Route::get('/', [EnkripsiController::class, 'index']);
-Route::post('/hasil', [EnkripsiController::class, 'hasil'])->name('hasil');

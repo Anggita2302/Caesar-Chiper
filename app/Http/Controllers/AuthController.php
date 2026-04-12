@@ -21,23 +21,11 @@ class AuthController extends Controller
 {
     if ($request->email == 'admin@gmail.com' && $request->password == '123') {
         session(['login' => true]);
-        return redirect('/dashboard');
+        return redirect('/pengguna');
     }
 
     return back()->with('error', 'Email atau password salah');
 }
-
-    public function dashboard()
-    {
-        // cek apakah sudah login
-    if (!session('login')) {
-        return redirect('/login');
-    }
-
-    $data = Pengguna::all(); // ambil data pengguna
-
-    return view('daftar_pengguna', compact('data'));
-    }
 
     public function logout()
     {
