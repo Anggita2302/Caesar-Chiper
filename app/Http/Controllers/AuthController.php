@@ -16,7 +16,7 @@ class AuthController extends Controller
     {
         return view('login');
     }
-    
+
     public function loginProses(Request $request)
 {
     if ($request->email == 'admin@gmail.com' && $request->password == '123') {
@@ -31,7 +31,7 @@ class AuthController extends Controller
     {
         session()->flush(); // hapus semua session
         return redirect('/login');
-    
+
     }
-    
+
 }
