@@ -38,4 +38,12 @@ Route::get('/buku', [BukuController::class, 'index']);
 // halaman logout
 Route::get('/logout', [AuthController::class, 'logout']);
 
+Route::get('/home', function () {
+ return view('home');
+});
+
+Route::get('/about', function () {
+ return view('about');
+});
+
 
