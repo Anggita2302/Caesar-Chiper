@@ -39,11 +39,25 @@ Route::get('/buku', [BukuController::class, 'index']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/home', function () {
- return view('home');
+    return view('home');
 });
 
 Route::get('/about', function () {
- return view('about');
+    return view('about');
 });
+
+// MATERI ABRU FORM DAN CSRF
+Route::get('/form', function () {
+    return view('form');
+});
+Route::post('/form', function () {
+    return "Data berhasil dikirim";
+});
+
+// lebih disarankan, tapi nama harus unik
+Route::get('/dashboard', function () {
+ return "Dashboard";
+})->name('dashboard');
+
 
 
