@@ -1,27 +1,19 @@
+<?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Mahasiswa extends Model
 {
-    protected $table = 'public.mahasiswa';
-
-    //menyaring kolom yang diisi manual
-    protected $fillable = [
-        'user_id',
-        'nama',
-        'nim',
-        'jurusan',
-        'fakultas',
-        'email',
-        'no_hp',
-        'alamat',
-        'foto'
-    ];
-
-    // relasi ke user
-    public function user()
+    public static function getAll()
     {
-        return $this->belongsTo(User::class);
+        return DB::table('mahasiswas')->get();
+    }
+
+    public static function getById($id)
+    {
+        return DB::table('mahasiswas')->where('id', $id)->first();
     }
 }

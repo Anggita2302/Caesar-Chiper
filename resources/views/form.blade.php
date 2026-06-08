@@ -8,9 +8,11 @@
 
 <body>
     <h1>Form Mahasiswa</h1>
-    <form method="POST" action="/form">
+    <form method="POST" action="/mahasiswa">
         @csrf
         <input type="text" name="nama" placeholder="Nama">
+        <input type="text" name="nim" placeholder="NIM">
+
         <button type="submit">
             Simpan
         </button>
