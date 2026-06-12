@@ -21,7 +21,13 @@
     <br>
     <br>
     <a href="{{ route('dashboard') }}">
-        Dashboard
+        Dashboard ini pake route
+    </a>
+
+    <br>
+
+    <a href="/dashboard/form/halo-mahasiswa-sti">
+        ini pake /dashboard
     </a>
 
 </body>

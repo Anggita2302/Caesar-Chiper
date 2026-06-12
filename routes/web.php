@@ -63,9 +63,9 @@ Route::get('/dashboard', function () {
  return "Dashboard";
 })->name('dashboard');
 
-Route::get('/mahasiswa/{id}', function ($id) {
-return $id;
-});
+// Route::get('/mahasiswa/{id}', function ($id) {
+// return $id;
+// });
 
 // Route::get('/mahasiswa', function () {
 // return 'Daftar Mahasiswa';
@@ -74,15 +74,20 @@ return $id;
 // Route menampilkan seluruh mahasiswa
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 // Route detail mahasiswa berdasarkan ID
-Route::get('/mahasiswa/{id}', [MahasiswaController::class, 'detail']);
+Route::get('/mahasiswa/{detail/id}', [MahasiswaController::class, 'detail']);
+Route::get('/mahasiswa/create', [MahasiswaController::class, 'create']);
+Route::post('/mahasiswa', [MahasiswaController::class, 'store']);
+Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit']);
+Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+
 
 // Menyimpan data mahasiswa baru
-Route::post('/mahasiswa', function (Request $request) {
-// Ambil data dari form
-$nim  = $request->input('nim');
-$nama = $request->input('nama');
-return 'Data disimpan: ' . $nama;
-});
+// Route::post('/mahasiswa', function (Request $request) {
+// // Ambil data dari form
+// $nim  = $request->input('nim');
+// $nama = $request->input('nama');
+// return 'Data disimpan: ' . $nama;
+// });
 
 // // Memperbarui seluruh data mahasiswa berdasarkan ID
 // Route::put('/mahasiswa/{id}', function (Request $request, $id) {
