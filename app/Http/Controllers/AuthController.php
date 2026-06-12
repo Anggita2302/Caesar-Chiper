@@ -16,7 +16,7 @@ class AuthController extends Controller
 {
     if ($request->email == 'admin@gmail.com' && $request->password == '123') {
         session(['login' => true]);
-        return redirect('/dashboard');
+        return redirect('/pengguna');
     }
 
     return back()->with('error', 'Email atau password salah');
