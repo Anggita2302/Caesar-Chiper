@@ -1,21 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-    <body>
+@extends('layouts.main')
+
+@section('content')
+
+<div class="container">
+
+    <div class="form-card">
+
+        <h2>Tambah Data Mahasiswa</h2>
+
         <form method="POST" action="/mahasiswa">
             @csrf
-            <input type="text" name="nama" placeholder="Nama">
-            <input type="text" name="nim" placeholder="NIM">
-            <input type="text" name="prodi" placeholder="Program Studi">
 
-            <button type="submit">
-                Simpan
-            </button>
+            <div class="form-group">
+                <label>Nama Mahasiswa</label>
+                <input type="text" name="nama" placeholder="Masukkan nama mahasiswa">
+            </div>
+
+            <div class="form-group">
+                <label>NIM</label>
+                <input type="text" name="nim" placeholder="Masukkan NIM">
+            </div>
+
+            <div class="form-group">
+                <label>Program Studi</label>
+                <input type="text" name="prodi" placeholder="Masukkan program studi">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-simpan">
+                    Simpan
+                </button>
+
+                <a href="/mahasiswa" class="btn-kembali">
+                    Kembali
+                </a>
+            </div>
+
         </form>
-    </body>
-</html>
+
+    </div>
+
+</div>
+
+@endsection

@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Aplikasi Laravel</title>
+    <title>Kampusku</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-
 <body>
-<h1>Website Kampus</h1>
 
-<hr>
-@include('partials.navbar')
+<h1>Sistem Informasi Mahasiswa</h1>
+
 @yield('content')
-</hr>
-
-@include('partials.footer')
 
 </body>
 </html>

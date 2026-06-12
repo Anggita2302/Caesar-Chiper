@@ -1,47 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Mahasiswa</title>
-</head>
-<body>
+@extends('layouts.main')
 
-    <h1>Edit Data Mahasiswa</h1>
+@section('content')
 
-    <form method="POST" action="/mahasiswa/{{ $mahasiswa->id }}">
-        @csrf
-        @method('PUT')
+<div class="container">
 
-        <input
-            type="text"
-            name="nama"
-            value="{{ $mahasiswa->nama }}"
-            placeholder="Nama"
-        >
+    <div class="form-card">
 
-        <input
-            type="text"
-            name="nim"
-            value="{{ $mahasiswa->nim }}"
-            placeholder="NIM"
-        >
+        <h2>Edit Data Mahasiswa</h2>
 
-        <input
-            type="text"
-            name="prodi"
-            value="{{ $mahasiswa->prodi }}"
-            placeholder="Program Studi"
-        >
+        <form method="POST" action="/mahasiswa/{{ $mahasiswa->id }}">
+            @csrf
+            @method('PUT')
 
-        <button type="submit">
-            Update
-        </button>
-    </form>
+            <div class="form-group">
+                <label>Nama Mahasiswa</label>
+                <input
+                    type="text"
+                    name="nama"
+                    value="{{ $mahasiswa->nama }}"
+                    placeholder="Masukkan nama mahasiswa"
+                >
+            </div>
 
-    <br>
+            <div class="form-group">
+                <label>NIM</label>
+                <input
+                    type="text"
+                    name="nim"
+                    value="{{ $mahasiswa->nim }}"
+                    placeholder="Masukkan NIM"
+                >
+            </div>
 
-    <a href="/mahasiswa">Kembali</a>
+            <div class="form-group">
+                <label>Program Studi</label>
+                <input
+                    type="text"
+                    name="prodi"
+                    value="{{ $mahasiswa->prodi }}"
+                    placeholder="Masukkan program studi"
+                >
+            </div>
 
-</body>
-</html>
+            <div class="button-group">
+                <button type="submit" class="btn-update">
+                    Update
+                </button>
+
+                <a href="/mahasiswa" class="btn-kembali">
+                    Kembali
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@endsection

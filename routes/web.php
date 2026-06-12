@@ -15,22 +15,22 @@ Route::get('/', function () {
 // Route::get('/', [EnkripsiController::class, 'index']);
 // Route::post('/hasil', [EnkripsiController::class, 'hasil'])->name('hasil');
 
-// // halaman login
-// Route::get('/login', [AuthController::class, 'login']);
-// Route::post('/login', [AuthController::class, 'loginProses']);
+// halaman login
+Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'loginProses']);
 
-// // halaman dashboard
-// use App\Http\Controllers\DashboardController;
-// Route::get('/dashboard', [DashboardController::class, 'index']);
+// halaman dashboard
+use App\Http\Controllers\DashboardController;
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
-// // halaman daftar pengguna
-// use App\Http\Controllers\PenggunaController;
-// Route::get('/pengguna', [PenggunaController::class, 'index']);
-// Route::get('/pengguna/create', [PenggunaController::class, 'create']);
-// Route::post('/pengguna/store', [PenggunaController::class, 'store']);
-// Route::get('/pengguna/edit/{id_pengguna}', [PenggunaController::class, 'edit']);
-// Route::post('/pengguna/update/{id_pengguna}', [PenggunaController::class, 'update']);
-// Route::get('/pengguna/delete/{id_pengguna}', [PenggunaController::class, 'destroy']);
+// halaman daftar pengguna
+use App\Http\Controllers\PenggunaController;
+Route::get('/pengguna', [PenggunaController::class, 'index']);
+Route::get('/pengguna/create', [PenggunaController::class, 'create']);
+Route::post('/pengguna/store', [PenggunaController::class, 'store']);
+Route::get('/pengguna/edit/{id_pengguna}', [PenggunaController::class, 'edit']);
+Route::post('/pengguna/update/{id_pengguna}', [PenggunaController::class, 'update']);
+Route::get('/pengguna/delete/{id_pengguna}', [PenggunaController::class, 'destroy']);
 
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\MahasiswaController;

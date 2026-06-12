@@ -11,7 +11,7 @@
 
     <style>
         body{
-            background: linear-gradient(to bottom, #92acff, #6aa5ff); 
+            background: linear-gradient(to bottom, #92acff, #6aa5ff);
             min-height:100vh;
             font-family: 'Segoe UI', sans-serif;
         }
@@ -140,7 +140,7 @@
     <div class="card-box mt-4">
         <h4>🎉 Info Kampus</h4>
         <p>
-            Selamat datang di sistem informasi kampus.  
+            Selamat datang di sistem informasi kampus.
             Jangan lupa cek jadwal dan tugas kamu setiap hari ya!
         </p>
     </div>

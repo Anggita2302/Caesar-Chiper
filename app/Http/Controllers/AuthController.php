@@ -7,11 +7,6 @@ use App\Models\Pengguna;
 
 class AuthController extends Controller
 {
-        public function landing()
-    {
-        return view('landing');
-    }
-
     public function login()
     {
         return view('login');
@@ -21,7 +16,7 @@ class AuthController extends Controller
 {
     if ($request->email == 'admin@gmail.com' && $request->password == '123') {
         session(['login' => true]);
-        return redirect('/pengguna');
+        return redirect('/dashboard');
     }
 
     return back()->with('error', 'Email atau password salah');

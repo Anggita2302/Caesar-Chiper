@@ -1,35 +1,42 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.main')
 
-<head>
-    <title>Form</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
+@section('content')
 
-<body>
-    <h1>Form Mahasiswa</h1>
+<div class="container">
 
-    <a href="/mahasiswa/create">Tambah Data Mahasiswa</a>
-    {{-- <a href="{{ route('mahasiswa.create') }}">Tambah Data Mahasiswa</a> --}}
+    <div class="header">
+        <h2>Data Mahasiswa</h2>
+        <a href="/mahasiswa/create" class="btn-tambah">
+            + Tambah Mahasiswa
+        </a>
+    </div>
 
     <table>
-        <tr>
-            <th>Nama</th>
-            <th>NIM</th>
-            <th>Prodi</th>
-        </tr>
-        @foreach ($data as $mhs)
-        <tr>
-            <td>{{ $mhs->nama }}</td>
-            <td>{{ $mhs->nim }}</td>
-            <td>{{ $mhs->prodi }}</td>
-            <td>
-                <a href="/mahasiswa/{{ $mhs->id }}/edit">Edit</a>
-            </td>
-        </tr>
-        @endforeach
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Prodi</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach ($data as $mhs)
+            <tr>
+                <td>{{ $mhs->nama }}</td>
+                <td>{{ $mhs->nim }}</td>
+                <td>{{ $mhs->prodi }}</td>
+                <td>
+                    <a href="/mahasiswa/{{ $mhs->id }}/edit" class="btn-edit">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
     </table>
 
-</body>
+</div>
 
-</html>
+@endsection
