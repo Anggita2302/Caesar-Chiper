@@ -20,7 +20,7 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #141414; /* Background color for the entire website, including individual sections */
   --default-color: #d9d9d9; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #ededed; /* Color for headings, subheadings and title throughout the website */
@@ -209,7 +209,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(20, 20, 20, 0.8);
+  --background-color: rgba(24, 24, 24, 0.8);
 }
 
 /* Index Page Header
@@ -439,7 +439,7 @@ h6 {
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
+    color: #a86b6b;
     position: absolute;
     font-size: 32px;
     top: 15px;
